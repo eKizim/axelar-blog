@@ -1,0 +1,11 @@
+.blog_section__title {
+	margin-bottom: 10px;
+	padding: 0 10px;
+	display: flex;
+	justify-content: space-between;
+
+	h4 {
+		font-family: var(--head-font);
+		font-size: 24px;
+	}
+}

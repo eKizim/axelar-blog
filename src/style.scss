@@ -1,0 +1,23 @@
+$head-font: 'Iceland', san-serif;
+$main-font: 'Share Tech Mono', san-serif;
+
+:root {
+	--head-font: 'Iceland', san-serif;
+	--main-font: 'Share Tech Mono', san-serif;
+	--content-font: 'Share Tech', san-serif;
+}
+
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	padding-top: 50px;
+}
+
+h1 {
+	font-family: var(--head-font);
+}

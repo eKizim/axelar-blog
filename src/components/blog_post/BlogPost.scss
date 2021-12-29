@@ -1,0 +1,44 @@
+.blog_post {
+	width: 270px;
+	height: 270px;
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	box-shadow: 5px 5px 10px gray;
+
+	&__img {
+		width: 100%;
+		margin-bottom: 15px;
+		display: block;
+
+		img {
+			width: 100%;
+			pointer-events: none;
+		}
+
+	}
+
+	&__info {
+		width: 100%;
+		height: 100%;
+		padding: 0 10px;
+		position: relative;
+		transition: .3s;
+		
+		a {
+			margin-bottom: 5px;
+			color: black;
+			font-family: var(--main-font);
+			font-size: 20px;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+
+		 p {
+		 	font-family: var(--content-font);
+		 }
+	}
+}

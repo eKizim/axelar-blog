@@ -1,0 +1,14 @@
+#home_page {
+	max-width: 1728px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	.home_page__title {
+		margin: 15px 0;
+		font-family: var(--head-font);
+		font-size: 32px;
+		text-align: center;
+	}
+}

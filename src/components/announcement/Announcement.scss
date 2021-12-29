@@ -1,0 +1,71 @@
+$head-font: 'Iceland', san-serif;
+$main-font: 'Share Tech Mono', san-serif;
+
+#announcement {
+	width: 100%;
+	max-height: 100px;
+	padding: 10px 0;
+	position: relative;
+
+	font-family: $head-font;
+	text-align: center;
+	color: white;
+	background-color: black;
+
+	.announcement_close {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		color: white;
+		font-size: 16px;
+		border: none;
+		background-color: transparent;
+		opacity: 0;
+		visibility: hidden;
+		cursor: pointer;
+		transition: .1s;
+
+		b {
+			pointer-events: none;
+		}
+	}
+
+	&:hover .announcement_close {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.announcement_block {
+		max-height: 100px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		&__title {
+			width: 90%;
+			font-size: 28px;
+			overflow: hidden;
+		}
+
+		&__description, 
+		&__link {
+			width: 90%;
+			font-size: 18px;
+		}
+
+		&__description {
+			margin-bottom: 5px;
+		}
+
+		&__link {
+			color: white;
+		}
+	}
+}

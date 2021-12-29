@@ -1,0 +1,18 @@
+#home_page__grid {
+	display: grid;
+	grid-template-columns: .7fr 2fr;
+	grid-template-areas: "news blog blog"
+						 "news blog blog"
+						 "news video video";
+	grid-row-gap: 50px;
+
+	#news_section {
+		grid-area: news;
+	}
+	#blog_section {
+		grid-area: blog;
+	}
+	#video_section {
+		grid-area: video;
+	}
+}

@@ -1,0 +1,17 @@
+#video_section {
+	display: flex;
+	flex-direction: column;
+
+	.video_section__container {
+		display: flex;
+		justify-content: space-evenly;
+
+		.video_elem {
+			width: 400px;
+			height: 250px;
+			border: solid 2px black;
+		}
+	}
+
+	
+}
