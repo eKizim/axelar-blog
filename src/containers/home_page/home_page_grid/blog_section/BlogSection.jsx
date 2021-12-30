@@ -19,7 +19,7 @@ export default function BlogSection() {
 				</div>
 			</div>
 		</section>
-	)
+	);
 };
 
 function LastBlogPost() {

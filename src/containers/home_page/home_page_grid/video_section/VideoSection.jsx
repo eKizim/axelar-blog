@@ -9,6 +9,7 @@ export default function VideoSection() {
 			<div className="video_section__container">
 				<div className="video_elem"></div>
 				<div className="video_elem"></div>
+				<div className="video_elem"></div>
 			</div>
 		</section>
 	);

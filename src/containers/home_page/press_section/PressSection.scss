@@ -1,0 +1,52 @@
+#press_section {
+	width: 100%;
+	height: 180px;
+	padding: 0 10px;
+	margin-bottom: 50px;
+
+	.press_section__container {
+		width: auto;
+		height: 120px;
+		display: flex;
+		overflow: hidden;
+	}
+}
+
+.press_unit {
+	min-width: 300px;
+	height: 110px;
+	margin: 0 25px;
+	padding: 10px;
+	box-shadow: 5px 5px 5px gray;
+	overflow: hidden;
+
+	&__head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&-img {
+			width: auto;
+			max-height: 50px;
+		}
+
+		&-date {
+			font-family: var(--main-font);
+			font-size: 14px;
+		}
+	}
+
+	a {
+		height: 40px;
+		display: block;
+		font-size: 14px;
+		font-family: var(--main-font);
+		color: black;
+		text-decoration: none;
+		overflow: hidden;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
