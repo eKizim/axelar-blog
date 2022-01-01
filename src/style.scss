@@ -4,7 +4,6 @@
 	--content-font: 'Share Tech', san-serif;
 }
 
-
 * {
 	box-sizing: border-box;
 	padding: 0;
@@ -17,4 +16,12 @@ body {
 
 h1 {
 	font-family: var(--head-font);
+}
+
+.section_title {
+	margin: 15px 0;
+	padding: 0 50px;
+	display: block;
+	font-family: var(--head-font);
+	font-size: 32px;
 }

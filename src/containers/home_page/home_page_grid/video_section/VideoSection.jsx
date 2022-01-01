@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPlayer from 'react-player/youtube';
 import SectionTitle from './../../../../components/section_title/SectionTitle.jsx';
 import './VideoSection.scss';
 
@@ -7,9 +8,15 @@ export default function VideoSection() {
 		<section id="video_section">
 			<SectionTitle title="Videos" buttonText="Watch all videos"/>
 			<div className="video_section__container">
-				<div className="video_elem"></div>
-				<div className="video_elem"></div>
-				<div className="video_elem"></div>
+				<div className="video_elem">
+					<ReactPlayer url="https://www.youtube.com/watch?v=9EBCZJk1aTA" width="100%" height="100%"/>
+				</div>
+				<div className="video_elem">
+					<ReactPlayer url="https://www.youtube.com/watch?v=9EBCZJk1aTA" width="100%" height="100%"/>
+				</div>
+				<div className="video_elem">
+					<ReactPlayer url="https://www.youtube.com/watch?v=9EBCZJk1aTA" width="100%" height="100%"/>
+				</div>
 			</div>
 		</section>
 	);

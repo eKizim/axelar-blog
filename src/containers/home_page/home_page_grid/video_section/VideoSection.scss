@@ -6,13 +6,14 @@
 
 	.video_section__container {
 		display: flex;
-		overflow: hidden;
+		overflow-x: scroll;
+		overflow-y: hidden;
 
 		.video_elem {
 			min-width: 400px;
 			height: 250px;
 			margin: 0 25px;
-			border: solid 2px black;
+			border-radius: 10px;
 		}
 	}
 

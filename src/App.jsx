@@ -2,7 +2,8 @@ import React from 'react';
 import NavBar from './components/nav_bar/NavBar.jsx';
 import Announcement from './components/announcement/Announcement.jsx';
 import HomePage from './containers/home_page/HomePage.jsx';
-import SectionButton from './components/section_button/SectionButton.jsx';
+import BlogPage from './containers/blog_page/BlogPage.jsx';
+import Footer from './components/footer/Footer.jsx';
 import './style.scss';
 
 export default function App() {
@@ -10,7 +11,8 @@ export default function App() {
 		<React.Fragment>
 			<NavBar/>
 			<Announcement/>
-			<HomePage/>
+			<BlogPage/>
+			<Footer/>
 		</React.Fragment>
 	)
 }
