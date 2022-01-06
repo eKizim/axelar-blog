@@ -1,27 +1,39 @@
 :root {
-	--head-font: 'Iceland', san-serif;
-	--main-font: 'Share Tech Mono', san-serif;
-	--content-font: 'Share Tech', san-serif;
+    /* Font vars*/
+    --head-font: 'Iceland', san-serif;
+    --main-font: 'Share Tech Mono', san-serif;
+    --content-font: 'Share Tech', san-serif;
+
+    /* Color palette*/
+    --main-light-color: #FFFFFF;
+    --main-dark-color: #1D1B1B;
+    --main-text-color: #1D1B1B;
+    --accent-color: #EFEFF6;
+
 }
 
 * {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scrollbar-width: thin;
 }
 
 body {
-	padding-top: 50px;
+    padding-top: 50px;
 }
 
 h1 {
-	font-family: var(--head-font);
+    font-family: var(--head-font);
+    color: var(--main-text-color);
 }
 
 .section_title {
-	margin: 15px 0;
-	padding: 0 50px;
-	display: block;
-	font-family: var(--head-font);
-	font-size: 32px;
+    margin: 15px 0;
+    padding: 0 50px;
+    display: block;
+    font-family: var(--head-font);
+    font-size: 32px;
+    text-decoration: underline;
+    color: var(--main-text-color);
 }

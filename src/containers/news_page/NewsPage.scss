@@ -1,0 +1,17 @@
+#news_page {
+    display: flex;
+    flex-direction: column;
+
+    .news_container {
+	padding: 0 50px;
+	display: flex;
+	justify-content: center;
+
+	&__viewer {
+	    width: 950px;
+	    padding: 15px;
+	    margin-right: 45px;
+	    border: solid 1px black;
+	}
+    }
+}

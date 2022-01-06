@@ -1,0 +1,25 @@
+.news_item {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    margin: 20px 0;
+    padding: 10px;
+
+    display: flex;
+    align-item: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    border: solid 1px black;
+    
+    &__title {
+	color: var(--main-font-color);
+	font-size: 28px;
+	font-family: var(--content-font);
+	text-decoration: none;
+
+	&:hover {
+	    text-decoration: underline;
+	}
+    }
+}

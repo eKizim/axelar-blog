@@ -1,0 +1,9 @@
+#news_page {
+    display: flex;
+    flex-direction: column;
+
+    .news_container {
+	display: flex;
+	
+    }
+}

@@ -12,7 +12,7 @@ export default function NewsSection() {
 				{posts}
 			</div>
 		</section>
-	)
+	);
 };
 
 
@@ -25,5 +25,5 @@ function NewsUnit() {
 				<SectionButton buttonText="Read"/>
 			</div>
 		</div>
-	)
+	);
 }

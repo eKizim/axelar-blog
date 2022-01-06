@@ -25,9 +25,14 @@ export default function BlogPage() {
 };
 
 function BlogPostReader() {
+
+	const closePost = () => {
+		document.querySelector('.reader_modal-background').classList.remove('active');
+	}
+
 	return (
 		<div className="reader_modal-background">
-			<button className="close_modal">X</button>
+			<button className="close_modal" onClick={closePost}>X</button>
 			<article className="post_reader">
 				<p>Test</p>
 			</article>

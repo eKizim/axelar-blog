@@ -8,15 +8,16 @@
 	align-items: center;
 	justify-content: space-evenly;
 
-	background-color: white;
+	background-color: var(--main-light-color);
 	box-shadow: 0 3px 3px black;
 	z-index: 100;
 
-	a {
+	.nav_bar__item,
+	.nav_bar__logo {
 		width: 150px;
 		font-family: var(--head-font);
 		font-size: 24px;
-		color: black;
+		color: var(--main-dark-color);
 		text-align:center;
 		text-decoration: none;
 		transition: .1s;
@@ -24,6 +25,6 @@
 
 	.nav_bar__item:hover {
 		color: white;
-		background-color: black;
+		background-color: var(--main-dark-color);
 	}
 }

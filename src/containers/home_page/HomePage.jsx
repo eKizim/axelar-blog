@@ -4,12 +4,12 @@ import PressSection from './press_section/PressSection.jsx';
 import './HomePage.scss';
 
 export default function HomePage() {
-	return (
-		<div id="home_page">
-			<h5 className="section_title">Last Updates</h5>
-			<HomePageGrid/>
-			<PressSection/>
-		</div>
-	);
+    return (
+        <section id="home_page">
+            <h5 className="section_title">Last Updates</h5>
+            <HomePageGrid/>
+            <PressSection/>
+        </section>
+    );
 };
 
