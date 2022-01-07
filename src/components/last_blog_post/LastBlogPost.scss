@@ -11,9 +11,11 @@
 
     &__img {
         width: 50%;
+        height: 100%;
         margin-right: 30px;
         display: block;
         border-radius: 5px;
+        overflow: hidden;
 
         img {
             width: 100%;
@@ -22,7 +24,13 @@
 
     &__info {
         width: 50%;
+        height: 90%;
         padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        overflow: hidden;
 
         &-title {
             margin-bottom: 10px;
@@ -42,7 +50,6 @@
         }
 
         &-intro {
-            height: 150px;
             font-family: var(--content-font);
             font-size: 18px;
             overflow: hidden;
@@ -58,12 +65,13 @@
 
     .last_blog_post__img {
         width: 100%;
-        margin-bottom: 35px;
+        margin-bottom: 15px;
         margin-right: 0;
     }
 
     .last_blog_post__info {
         width: 100%;
+        justify-content: start;
 
         &-title {
             font-size: 24px;

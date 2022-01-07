@@ -1,41 +1,46 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Link, useParams, Outlet } from 'react-router-dom';
 import LastBlogPost from '../../components/last_blog_post/LastBlogPost.jsx';
 import BlogPost from '../../components/blog_post/BlogPost.jsx';
 import './BlogPage.scss';
 
+import { articleBase } from '../../test_storage/blog_articles/article_examples.jsx';
+
 export default function BlogPage() {
-	return (
-		<section id="blog_page">
-			<BlogPostReader/>
-			<h5 className="section_title">Axelar blog</h5>
-			<LastBlogPost/>
-			<div className="blog_page__grid">
-				<BlogPost/>
-				<BlogPost/>
-				<BlogPost/>
-				<BlogPost/>
-				<BlogPost/>
-				<BlogPost/>
-				<BlogPost/>
-				<BlogPost/>
-				<BlogPost/>
-			</div>
-		</section>
-	);
+    const lastArticle = articleBase[0];
+    const renderArticles = articleBase.slice(1).map(el => el = <BlogPost titleImg={el.title_img} title={el.title} date={el.date} titleParagraph={el.title_p}/>);
+    
+    return (
+        <section id="blog_page">
+            <h5 className="section_title">Axelar blog</h5>
+            <LastBlogPost title={lastArticle.title} date={lastArticle.date} titleImg={lastArticle.title_img} titleParagraph={lastArticle.title_p}/>
+            <div className="blog_page__grid">
+                {renderArticles}
+            </div>
+            <Outlet/>
+        </section>
+    );
 };
 
-function BlogPostReader() {
+export function BlogPostReader() {
+    const params = useParams();
+    const currentArticle = articleBase.find(el => el.title.toLowerCase().split(' ').join('_') === params.invoiceId);
 
-	const closePost = () => {
-		document.querySelector('.reader_modal-background').classList.remove('active');
-	}
+    useEffect(() => {
+        document.querySelector('.post_reader__body').innerHTML = currentArticle.body;
+        document.querySelector('body').style.overflow = 'hidden';
+        return () => document.querySelector('body').style.overflow = 'auto';
+    });
 
-	return (
-		<div className="reader_modal-background">
-			<button className="close_modal" onClick={closePost}>X</button>
-			<article className="post_reader">
-				<p>Test</p>
-			</article>
-		</div>
-	);
+    return (
+        <div id="reader_modal">
+            <Link to="/blog" className="close_modal">X</Link>
+            <article className="post_reader">
+                <h5 className="post_reader__title">{currentArticle.title}</h5>
+                <p className="post_reader__date">{currentArticle.date}</p>
+                <img className="post_reader__title-img" src={currentArticle.title_img} alt=""/>
+                <div className="post_reader__body"></div>
+            </article>
+        </div>
+    );
 };
