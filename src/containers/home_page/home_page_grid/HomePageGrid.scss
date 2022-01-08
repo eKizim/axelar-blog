@@ -5,8 +5,7 @@
 	grid-template-areas: "news blog blog"
 						 "news blog blog"
 						 "news video video";
-	row-gap: 30px;
-	column-gap: 20px;
+	gap: 15px;
 
 	#news_section {
 		grid-area: news;

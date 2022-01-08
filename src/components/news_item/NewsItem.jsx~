@@ -1,8 +1,0 @@
-import React from 'react';
-import './NewsItem.scss';
-
-export default function NewsItem() {
-    return (
-        <div></div>
-    );
-};

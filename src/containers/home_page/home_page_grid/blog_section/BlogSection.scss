@@ -2,16 +2,18 @@
 	width: auto;
 	padding: 10px;
 	display: grid;
-	align-items: center;
+	align-items: start;
 
 	.blog_section__container {	
 		display: grid;
+		align-self: start;
 		gap: 10px;
 		grid-template-columns: 1.5fr 2fr;
 	}
 
 	.recent_posts {
 		display: grid;
+		align-self: start;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr;
 		gap: 10px;

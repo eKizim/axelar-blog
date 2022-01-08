@@ -5,18 +5,18 @@ import BlogPostImg from './../../../../images/blog_post_img.png';
 import SectionTitle from './../../../../components/section_title/SectionTitle.jsx';
 import './BlogSection.scss';
 
-import { articleBase } from '../../../../test_storage/blog_articles/article_examples.jsx';
+import { articleBase } from '../../../../test_storage/article_examples.jsx';
 
 export default function BlogSection() {
 	const lastArticle = articleBase[0];
 	const recentPosts = articleBase.slice(1).length === 4 ? articleBase.slice(1) : articleBase.slice(1, 5);
-	const renderRecentPosts = recentPosts.map(el => el = <BlogPost clipped titleImg={el.title_img} title={el.title}/>);
+	const renderRecentPosts = recentPosts.map(el => el = <BlogPost key={el.post_id} fromHome clipped post_id={el.post_id} titleImg={el.title_img} title={el.title}/>);
 
 	return (
 		<section id="blog_section">
-			<SectionTitle title="Blog" buttonText="Read all posts" link="blog"/>
+			<SectionTitle title="Blog" buttonText="Read all posts" link="/blog"/>
 			<div className="blog_section__container">
-				<LastBlogPost clipped title={lastArticle.title} date={lastArticle.date} titleImg={lastArticle.title_img} titleParagraph={lastArticle.title_p}/>
+				<LastBlogPost fromHome clipped post_id={lastArticle.post_id} title={lastArticle.title} date={lastArticle.date} titleImg={lastArticle.title_img} titleParagraph={lastArticle.title_p}/>
 				<div className="recent_posts">
 					{renderRecentPosts}
 				</div>

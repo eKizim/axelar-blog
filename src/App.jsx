@@ -23,7 +23,10 @@ export default function App() {
                     <Route path=":invoiceId" element={<BlogPostReader/>}/>
                 </Route>
                 <Route path="/video" element={<VideoPage/>}/>
-                <Route path="/news" element={<NewsPage/>}/>
+                <Route path="/news" element={<NewsPage/>}>
+                    <Route path=":invoiceId" element={<NewsPage/>}/>
+                </Route>
+                <Route path="*" element={<div>Empty</div>}/>
             </Routes>
             <Footer/>
         </React.Fragment>

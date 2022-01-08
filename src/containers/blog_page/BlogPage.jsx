@@ -4,16 +4,16 @@ import LastBlogPost from '../../components/last_blog_post/LastBlogPost.jsx';
 import BlogPost from '../../components/blog_post/BlogPost.jsx';
 import './BlogPage.scss';
 
-import { articleBase } from '../../test_storage/blog_articles/article_examples.jsx';
+import { articleBase } from '../../test_storage/article_examples.jsx';
 
 export default function BlogPage() {
     const lastArticle = articleBase[0];
-    const renderArticles = articleBase.slice(1).map(el => el = <BlogPost titleImg={el.title_img} title={el.title} date={el.date} titleParagraph={el.title_p}/>);
+    const renderArticles = articleBase.slice(1).map(el => el = <BlogPost key={el.post_id} post_id={el.post_id} titleImg={el.title_img} title={el.title} date={el.date} titleParagraph={el.title_p}/>);
     
     return (
         <section id="blog_page">
             <h5 className="section_title">Axelar blog</h5>
-            <LastBlogPost title={lastArticle.title} date={lastArticle.date} titleImg={lastArticle.title_img} titleParagraph={lastArticle.title_p}/>
+            <LastBlogPost post_id={lastArticle.post_id} title={lastArticle.title} date={lastArticle.date} titleImg={lastArticle.title_img} titleParagraph={lastArticle.title_p}/>
             <div className="blog_page__grid">
                 {renderArticles}
             </div>
@@ -24,7 +24,7 @@ export default function BlogPage() {
 
 export function BlogPostReader() {
     const params = useParams();
-    const currentArticle = articleBase.find(el => el.title.toLowerCase().split(' ').join('_') === params.invoiceId);
+    const currentArticle = articleBase.find(el => el.post_id === params.invoiceId.split('_')[0]);
 
     useEffect(() => {
         document.querySelector('.post_reader__body').innerHTML = currentArticle.body;
