@@ -13,7 +13,7 @@ export default function NewsItem({fromHome, active, news_item_id, title, date, t
             <img className="news_item__img" src={titleImg} alt=""/>
             <div className="news_item__container">
                 <p className="news_item__date">{date}</p>
-                <p className="news_item__title">{title}</p>
+                <p className="news_item__title">{ active ? "<< Read": title}</p>
             </div>
         </Link>
     );

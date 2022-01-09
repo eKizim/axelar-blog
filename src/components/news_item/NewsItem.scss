@@ -1,6 +1,6 @@
 .news_item {
-    width: 100%;
-    max-width: 350px;
+    //width: 100%;
+    width: 350px;
     height: 200px;
     position: relative;
 
@@ -74,9 +74,18 @@
 
 .news_item.active {
     .news_item__container {
+	padding-bottom: 0;
+	align-items: center;
+	justify-content: center;
         background-color: rgba(0, 0, 0, .9);
     }
     .news_item__img {
         filter: blur(5px);
+    }
+    .news_item__date {
+	display: none;
+    }
+    .news_item__title {
+	text-decoration: underline;
     }
 }

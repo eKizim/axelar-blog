@@ -1,0 +1,12 @@
+.press_page__container {
+    padding: 30px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    justify-items: center;
+    gap: 15px;
+
+    .press_unit {
+        max-width: fit-content;
+    }
+}

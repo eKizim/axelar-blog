@@ -1,19 +1,20 @@
 #home_page__grid {
-	margin-bottom: 60px;
-	display: grid;
-	grid-template-columns: .7fr 2fr;
-	grid-template-areas: "news blog blog"
-						 "news blog blog"
-						 "news video video";
-	gap: 15px;
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: .7fr 2fr;
+    grid-template-areas: "news blog blog"
+			 "news blog blog"
+			 "news video video";
+    gap: 15px;
+    align-items: start;
 
-	#news_section {
-		grid-area: news;
-	}
-	#blog_section {
-		grid-area: blog;
-	}
-	#video_section {
-		grid-area: video;
-	}
+    #news_section {
+	grid-area: news;
+    }
+    #blog_section {
+	grid-area: blog;
+    }
+    #video_section {
+	grid-area: video;
+    }
 }

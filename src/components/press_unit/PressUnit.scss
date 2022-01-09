@@ -1,0 +1,39 @@
+.press_unit {
+    max-width: 300px;
+    height: 110px;
+    padding: 10px;
+    box-shadow: 0px 0px 3px 1px gray;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    overflow: hidden;
+
+    &__head {
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&-img {
+	    max-width: 50px;
+	}
+
+	&-date {
+	    font-family: var(--main-font);
+	    font-size: 14px;
+	}
+    }
+
+    &__title {
+	height: 40px;
+	display: block;
+	font-size: 16px;
+	font-family: var(--main-font);
+	overflow: hidden;
+
+    }
+
+    &:hover .press_unit__title {
+	text-decoration: underline;
+    }
+}
