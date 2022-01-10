@@ -1,12 +1,12 @@
 .section_button {
-	display: flex;
-	align-items: center;
-	color: black;
-	text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--main-text-color);
+    text-decoration: none;
 
-	p {
-		font-family: var(--main-font);
-		font-size: 14px;
-		border-bottom: solid 1px black;
-	}
+    p {
+	font-family: var(--main-font);
+	font-size: 14px;
+	border-bottom: solid 1px var(--main-dark-color);
+    }
 }

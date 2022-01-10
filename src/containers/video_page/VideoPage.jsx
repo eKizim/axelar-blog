@@ -1,33 +1,31 @@
 import React, { useState, useEffect } from 'react';
+import ReactPlayer from 'react-player';
 import PlayIcon from '../../images/play.svg';
 import ActivePlayIcon from '../../images/play_active.svg';
 import './VideoPage.scss';
 
+import { videoBase } from '../../test_storage/video_base.jsx';
+
 export default function VideoPage() {
-    const [curVid, setCurVid] = useState();
+    const [curVid, setCurVid] = useState(videoBase[0].link);
+    const [vidId, setVidId] = useState(videoBase[0].video_id);
 
     return (
         <section id="video_page">
             <h5 className="section_title">Axelar videos</h5>
             <div className="video_container">
-                <div className="video_container__viewer">{curVid}</div>
-                <VideoList curVid={curVid} setCurVid={setCurVid}/>
+                <div className="video_container__viewer">
+                    <ReactPlayer url={curVid} width="100%" height="100%"/>
+                </div>
+                <VideoList setCurVid={setCurVid} vidId={vidId} setVidId={setVidId}/>
             </div>
         </section>
     );
 };
 
 
-function VideoList({curVid, setCurVid}) {
-    const [vids, setVids] = useState([]);
-
-    useEffect(() => {
-        let tempArr = ["#1", "#2", "#3"];
-        setVids(tempArr);
-        setCurVid(tempArr[0]);
-    }, []);
-
-    const renderVids = vids.map(el => el = <VideoItem key={el} num={el} curVid={curVid} setCurVid={setCurVid}/>);
+function VideoList({setCurVid, vidId, setVidId}) {
+    const renderVids = videoBase.map(el => el = <VideoItem key={el.video_id} video_id={el.video_id} title={el.video_title} pub_date={el.pub_date} link={el.link} num={el} vidId={vidId} setVidId={setVidId} setCurVid={setCurVid}/>);
 
     return (
         <div className="video_container__list">
@@ -37,18 +35,17 @@ function VideoList({curVid, setCurVid}) {
 };
 
 
-function VideoItem({num, curVid, setCurVid}) {
+function VideoItem({video_id, link, title, pub_date, vidId, setVidId, setCurVid}) {
     const [icon, setIcon] = useState();
 
-    useEffect(() => curVid === num ? setIcon(ActivePlayIcon) : setIcon(PlayIcon), [curVid]);
+    useEffect(() => vidId === video_id ? setIcon(ActivePlayIcon) : setIcon(PlayIcon), [vidId]);
 
     return (
-        <div className="video_item" onChange={() => setCurVid(num)}>
-            <input type="radio" name="video" id={num} value={num} defaultChecked={num === "#1"}/>
-            <label htmlFor={num}>
-                <img src={icon} alt=""/>
-                <p>Test</p>
-                <p>1:58:00</p>
+        <div className="video_item" onChange={() => {setCurVid(link); setVidId(video_id);}}>
+            <input type="radio" name="video" id={video_id} value={video_id} defaultChecked={video_id === "v0001"}/>
+            <label className="video_item__label" htmlFor={video_id}>
+                <img className="video_item__img" src={icon} alt=""/>
+                <p className="video_item__title">{title}</p>
             </label>
         </div>
     );

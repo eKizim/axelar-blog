@@ -43,7 +43,7 @@
             min-height: 50px;
             max-height: 50px;
             margin-bottom: 5px;
-            color: black;
+            color: var(--main-text-color);
             font-family: var(--main-font);
             font-size: 20px;
             text-decoration: none;
@@ -76,11 +76,11 @@
 
     .blog_post__info {
         height: 80%;
-        color: white;
+        color: var(--main-light-color);
         background-color: rgba(0, 0, 0, .7);
 
         a {
-            color: white;
+            color: var(--main-light-color);
         }
     }
 } 

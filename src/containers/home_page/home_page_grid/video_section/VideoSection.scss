@@ -1,19 +1,20 @@
 #video_section {
-	width: 100%;
-	padding: 10px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .video_section__container {
+	padding: 0 10px;
 	display: flex;
-	flex-direction: column;
+	justify-content: space-between;
 
-	.video_section__container {
-		display: flex;
-		overflow-x: scroll;
-		overflow-y: hidden;
-
-		.video_elem {
-			min-width: 400px;
-			height: 250px;
-			margin: 0 25px;
-			border-radius: 10px;
-		}
+	.video_elem {
+	    min-width: 450px;
+	    height: 250px;
+	    border-radius: 5px;
+	    background-color: var(--main-dark-color);
+	    overflow: hidden;
 	}
+    }
 }

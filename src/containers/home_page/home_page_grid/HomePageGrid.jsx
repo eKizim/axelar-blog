@@ -5,11 +5,11 @@ import VideoSection from './video_section/VideoSection.jsx';
 import './HomePageGrid.scss';
 
 export default function HomePageGrid() {
-	return (
-		<div id="home_page__grid">
-			<NewsSection/>
-			<BlogSection/>
-			<VideoSection/>
-		</div>
-	);
+    return (
+	<div id="home_page__grid">
+  	    <NewsSection/>
+	    <BlogSection/>
+	    <VideoSection/>
+	</div>
+    );
 };
