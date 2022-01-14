@@ -1,15 +1,27 @@
 import React from 'react';
-import HomePageGrid from './home_page_grid/HomePageGrid.jsx';
+import NewsSection from './news_section/NewsSection.jsx';
+import BlogSection from './blog_section/BlogSection.jsx';
+import VideoSection from './video_section/VideoSection.jsx';
 import PressSection from './press_section/PressSection.jsx';
 import './HomePage.scss';
 
 export default function HomePage() {
     return (
         <section id="home_page">
-            <h5 className="section_title">Last Updates</h5>
+            <h3 className="section_title">Last Updates</h3>
             <HomePageGrid/>
-            <PressSection/>
         </section>
     );
 };
 
+
+function HomePageGrid() {
+    return (
+	<div id="home_page__grid">
+  	    <NewsSection/>
+	    <BlogSection/>
+	    <VideoSection/>
+            <PressSection/>
+	</div>
+    );
+};

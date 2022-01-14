@@ -1,11 +1,12 @@
 .press_unit {
-    max-width: 300px;
+    width: 300px;
     height: 110px;
     padding: 10px;
     box-shadow: 0px 0px 3px 1px gray;
     border-radius: 5px;
     text-decoration: none;
     color: var(--main-text-color);
+    transition: .1s;
     overflow: hidden;
 
     &__head {
@@ -20,20 +21,20 @@
 
 	&-date {
 	    font-family: var(--main-font);
-	    font-size: 14px;
+	    font-size: .9rem;
 	}
     }
 
     &__title {
 	height: 40px;
 	display: block;
-	font-size: 16px;
-	font-family: var(--main-font);
+	font-size: 1rem;
+	font-family: var(--content-font);
 	overflow: hidden;
 
     }
 
-    &:hover .press_unit__title {
-	text-decoration: underline;
+    &:hover {
+	box-shadow: 0 0 3px 1px var(--main-dark-color);
     }
 }

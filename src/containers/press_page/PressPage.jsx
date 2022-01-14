@@ -9,7 +9,7 @@ export default function PressPage() {
 
     return (
         <section id="press_page">
-            <h5 className="section_title">Press mentions</h5>
+            <h3 className="section_title">Press mentions</h3>
             <div className="press_page__container">
                 {renderPress}
             </div>

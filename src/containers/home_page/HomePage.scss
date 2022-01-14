@@ -1,5 +1,5 @@
 #home_page {
-    max-width: 1728px;
+    max-width: 1440px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -8,5 +8,40 @@
     .section_title {
 	text-align: center;
 	text-decoration: underline;
+    }
+}
+
+#home_page__grid {
+    max-width: 1728px;
+    display: grid;
+    grid-template-columns: .7fr 2fr;
+    grid-template-areas: "news blog blog"
+			 "news blog blog"
+			 "video video video"
+                         "press press press";
+    gap: 30px;
+    align-items: start;
+
+    #news_section {
+	grid-area: news;
+    }
+    #blog_section {
+	grid-area: blog;
+    }
+    #video_section {
+	grid-area: video;
+    }
+    #press_section {
+	grid-area: press;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #home_page__grid {
+	grid-template-areas: "news news news"
+        		     "blog blog blog"
+        		     "blog blog blog"
+        		     "video video video"
+        		     "press press press";
     }
 }

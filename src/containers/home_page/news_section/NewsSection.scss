@@ -1,0 +1,32 @@
+#news_section {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .news_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 15px;
+
+	.news_item {
+	    width: 100%;
+	    height: 15vw;
+	}
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #news_section {
+	.news_container {
+	    flex-direction: row;
+	    justify-content: space-evenly;
+	    
+	    .news_item {
+		width: 30%;
+		height: 100px;
+	    }
+	}
+    }
+}

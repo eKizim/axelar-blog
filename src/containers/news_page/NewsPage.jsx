@@ -10,7 +10,7 @@ export default function NewsPage() {
     
     return (
         <section id="news_page">
-            <h5 className="section_title">News</h5>
+            <h3 className="section_title">News</h3>
             <div className="news_container">
                 <NewsViewer setCurId={setCurId}/>
                 <NewsList curId={curId}/>
@@ -21,19 +21,24 @@ export default function NewsPage() {
 
 
 function NewsViewer({setCurId}) {
+    const [viewerBody, setViewerBody] = useState();
     const params = useParams();
     const currentItem = params.invoiceId ? newsBase.find(el => el.news_item_id === params.invoiceId.split('_')[0]) : newsBase[0];
 
     useEffect(() => {
-        document.querySelector('.news_viewer__body').innerHTML = currentItem.body;
+        setViewerBody(currentItem.body);
         setCurId(currentItem.news_item_id);
     });
+
+    const setBodyHTML = () => {
+        return {__html: viewerBody};
+    };
 
     return (
         <article className="news_viewer" data-current-item={currentItem.news_item_id}>
             <p className="news_viewer__date">{currentItem.date}</p>
             <h5 className="news_viewer__title">{currentItem.title}</h5>
-            <div className="news_viewer__body"></div>
+            <div className="news_viewer__body" dangerouslySetInnerHTML={setBodyHTML()}></div>
         </article>
     );
 };
@@ -41,10 +46,12 @@ function NewsViewer({setCurId}) {
 
 function NewsList({curId}) {
     const renderNews = newsBase.map(el => el = <NewsItem active={curId === el.news_item_id} key={el.news_item_id} news_item_id={el.news_item_id} title={el.title} date={el.date} titleImg={el.title_img}/>);
-
+    
     return (
         <div className="news_list">
-            {renderNews}
+            <div className="news_list__container">
+                {renderNews}
+            </div>
         </div>
     );
 };

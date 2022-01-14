@@ -3,27 +3,20 @@
     width: 370px;
     height: 370px;
     position: relative;
-
     display: flex;
     flex-direction: column;
-
+    font-decoration: none;
+    color: var(--main-text-color);
     box-shadow: 0px 0px 3px 1px gray;
-    border-radius: 5px;
-
     overflow: hidden;
 
     &__img {
         width: 100%;
-        max-height: 200px;
-        margin-bottom: 15px;
+        max-height: 215px;
+        margin-bottom: 10px;
         display: block;
         overflow: hidden;
         transition: .1s;
-
-        img {
-            width: 100%;
-            pointer-events: none;
-        }
     }
 
     &__info {
@@ -39,14 +32,12 @@
         overflow: hidden;
         transition: .2s;
         
-        a {
-            min-height: 50px;
-            max-height: 50px;
+        &-title {
+            min-height: 20px;
+	    max-height: 50px;
             margin-bottom: 5px;
-            color: var(--main-text-color);
             font-family: var(--main-font);
-            font-size: 20px;
-            text-decoration: none;
+            font-size: 1.3rem;
             overflow: hidden;
         }
         a:hover {
@@ -54,14 +45,14 @@
         }
 
         &-date {
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             font-family: var(--main-font);
-            font-size: 14px;
+            font-size: 1rem;
         }
 
         &-content {
             font-family: var(--content-font);
-            font-size: 16px;
+            font-size: 1rem;
             pointer-events: none;
             overflow: hidden;
         }
@@ -69,7 +60,6 @@
 }
 
 .blog_post:hover {
-
     .blog_post__img {
         filter: blur(3px);
     }
@@ -86,43 +76,4 @@
 } 
 
 
-.blog_post.clipped {
-    max-width: 270px;
-    height: 150px;
 
-    .blog_post__img {
-        margin-bottom: 0;
-    }
-    .blog_post__info {
-        height: 100%;
-        top: 0;
-        left: 0;
-        align-items: center;
-        justify-content: center;
-        visibility: hidden;
-        opacity: 0;
-
-        a {
-            max-height: 150px;
-            min-height: auto;
-            text-align: center;
-            font-size: 18px;
-        }
-
-        &-date {
-            display: none;
-        }
-
-        &-content {
-            display: none;
-        }
-    }
-}
-
-.blog_post.clipped:hover {
-    .blog_post__info {
-        height: 100%;
-        visibility: visible;
-        opacity: 1;
-    }
-}

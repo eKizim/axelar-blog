@@ -5,10 +5,10 @@ import './SectionButton.scss';
 
 export default function SectionButton({buttonText, link}) {
 
-	return (
-		<Link className="section_button" to={link ? link : ''}>
-			<p>{buttonText}</p>
-			<img src={ArrowsIcon} alt=""/>
-		</Link>
-	)
+    return (
+	<Link className="section_button" to={link ? link : ''}>
+	    <p>{buttonText}</p>
+	    <img src={ArrowsIcon} alt=""/>
+	</Link>
+    );
 }

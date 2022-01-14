@@ -1,0 +1,34 @@
+#video_section {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .video_section__container {
+	padding: 0 10px;
+	display: flex;
+	justify-content: space-evenly;
+	gap: 30px;
+
+	.video_elem {
+	    width: 50%;
+	    height: 28vw;
+	    background-color: var(--main-dark-color);
+	    overflow: hidden;
+	}
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #video_section {
+	.video_section__container {
+	    flex-direction: column;
+	    align-items: center;
+
+	    .video_elem {
+		width: 100%;
+		height: 50vw;
+	    }
+	}
+    }
+}

@@ -1,12 +1,13 @@
 #nav_bar {
     width: 100%;
     height: 50px;
+    padding: 0 10px;
     position: fixed;
     top: 0;
 
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     background-color: var(--main-light-color);
     box-shadow: 0 3px 3px var(--main-dark-color);
@@ -15,16 +16,126 @@
     .nav_bar__item,
     .nav_bar__logo {
 	width: 150px;
-	font-family: var(--head-font);
-	font-size: 24px;
-	color: var(--main-text-color);
 	text-align:center;
 	text-decoration: none;
 	transition: .1s;
     }
 
+    .nav_bar__item {
+	font-family: var(--head-font);
+	color: var(--main-text-color);
+	font-size: 1.5rem;
+    }
+
+    .nav_bar__logo img {
+	width: 150px;
+    }
+
     .nav_bar__item:hover {
 	color: var(--main-light-color);
 	background-color: var(--main-dark-color);
+    }
+}
+
+
+.nav_bar__container {
+    width: 100%;
+    height: 0;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--main-light-color);
+    transition: .2s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.nav_bar__container.active {
+    height: 300px;
+    visibility: visible;
+    opacity: 1;
+
+    .nav_bar__item {
+	opacity: 1;
+	visibility: visible;
+    }
+}
+
+.burger_button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+
+    span {
+	width: 100%;
+	height: 3px;
+	display: block;
+	background-color: var(--main-dark-color);
+	pointer-events: none;
+
+	&:before {
+	    content: "";
+	    height: 3px;
+	    display: block;
+	    position: relative;
+	    bottom: 10px;
+	    background-color: var(--main-dark-color);
+	    transition: .1s;
+	}
+
+	&:after {
+	    content: "";
+	    height: 3px;
+	    display: block;
+	    position: relative;
+	    top: 7px;
+	    background-color: var(--main-dark-color);
+	    transition: .1s;
+	}
+    }
+}
+
+.burger_button.active {
+    span {
+	background-color: transparent;
+	
+	&:before {
+	    transform: translateY(10px) rotate(-45deg);
+	}
+	
+	&:after {
+	    transform: translateY(-10px) rotate(45deg);
+	}
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    #nav_bar {
+	.nav_bar__logo {
+	    width: auto;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    
+	    img {
+		width: 90%;
+	    }
+	}
+
+	.nav_bar__item {
+	    width: 100%;
+	    height: 25%;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	}
     }
 }

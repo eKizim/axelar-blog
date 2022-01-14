@@ -12,7 +12,7 @@ export default function VideoPage() {
 
     return (
         <section id="video_page">
-            <h5 className="section_title">Axelar videos</h5>
+            <h3 className="section_title">Axelar video</h3>
             <div className="video_container">
                 <div className="video_container__viewer">
                     <ReactPlayer url={curVid} width="100%" height="100%"/>

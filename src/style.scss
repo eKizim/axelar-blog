@@ -1,4 +1,7 @@
 :root {
+    /* Font size */
+    font-size: 16px;
+
     /* Font vars*/
     --head-font: 'Iceland', san-serif;
     --main-font: 'Share Tech Mono', san-serif;
@@ -30,12 +33,22 @@ h1 {
 .section_title {
     width: 100%;
     max-width: 1728px;
-    margin: 15px 0;
+    margin: 20px 0;
     padding: 0 50px;
     display: flex;
     align-self: center;
-    font-family: var(--head-font);
-    font-size: 32px;
+    font-family: var(--main-font);
+    font-size: 1.5rem;
     text-decoration: underline;
     color: var(--main-text-color);
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+	font-size: 14px;
+    }
+
+    .section_title {
+	padding: 0 10px;
+    }
 }

@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Link, useParams, Outlet } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams, Outlet, useNavigate } from 'react-router-dom';
 import LastBlogPost from '../../components/last_blog_post/LastBlogPost.jsx';
 import BlogPost from '../../components/blog_post/BlogPost.jsx';
 import './BlogPage.scss';
@@ -12,35 +12,48 @@ export default function BlogPage() {
     
     return (
         <section id="blog_page">
-            <h5 className="section_title">Axelar blog</h5>
-            <LastBlogPost post_id={lastArticle.post_id} title={lastArticle.title} date={lastArticle.date} titleImg={lastArticle.title_img} titleParagraph={lastArticle.title_p}/>
-            <div className="blog_page__grid">
-                {renderArticles}
-            </div>
-            <Outlet/>
+          <h3 className="section_title">Axelar blog</h3>
+          <LastBlogPost 
+            post_id={lastArticle.post_id} 
+            title={lastArticle.title} 
+            date={lastArticle.date} 
+            titleImg={lastArticle.title_img} 
+            titleParagraph={lastArticle.title_p}/>
+          <div className="blog_page__grid">
+            {renderArticles}
+          </div>
+          <Outlet/>
         </section>
     );
 };
 
 export function BlogPostReader() {
     const params = useParams();
+    const [readerBody, setReaderBody] = useState();
+    const navigate = useNavigate();
+
     const currentArticle = articleBase.find(el => el.post_id === params.invoiceId.split('_')[0]);
 
     useEffect(() => {
-        document.querySelector('.post_reader__body').innerHTML = currentArticle.body;
+        setReaderBody(currentArticle.body);
         document.querySelector('body').style.overflow = 'hidden';
+
         return () => document.querySelector('body').style.overflow = 'auto';
     });
 
+    const setBodyHTML = () => {
+        return {__html: readerBody};
+    };
+
     return (
         <div id="reader_modal">
-            <Link to="/blog" className="close_modal">X</Link>
-            <article className="post_reader">
-                <h5 className="post_reader__title">{currentArticle.title}</h5>
-                <p className="post_reader__date">{currentArticle.date}</p>
-                <img className="post_reader__title-img" src={currentArticle.title_img} alt=""/>
-                <div className="post_reader__body"></div>
-            </article>
+          <button className="close_modal" onClick={() => navigate('/blog')}>X</button>
+          <article className="post_reader">
+            <h5 className="post_reader__title">{currentArticle.title}</h5>
+            <p className="post_reader__date">{currentArticle.date}</p>
+            <img className="post_reader__title-img" src={currentArticle.title_img} alt=""/>
+            <div className="post_reader__body" dangerouslySetInnerHTML={setBodyHTML()}></div>
+          </article>
         </div>
     );
 };
