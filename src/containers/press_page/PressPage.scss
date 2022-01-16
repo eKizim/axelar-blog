@@ -12,28 +12,5 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-    
-    .press_unit {
-	max-width: 30%;
-    }
 }
 
-@media screen and (max-width: 768px) {
-    .press_page__container {
-	gap: 10px;
-
-	.press_unit {
-	    max-width: 45%;
-	}
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .press_page__container {
-	gap: 5px;
-
-	.press_unit {
-	    max-width: 100%;
-	}
-    }
-}

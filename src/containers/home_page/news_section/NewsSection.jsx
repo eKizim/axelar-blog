@@ -13,8 +13,10 @@ export default function NewsSection() {
     return (
 	<section id="news_section">
 	    <SectionTitle title="News" buttonText="Read all news" link="/news"/>
-	    <div className="news_container">
+	    <div className="news_section__list">
+              <div className="news_section__container">
 	        {renderNews}
+              </div>
 	    </div>
 	</section>
     );

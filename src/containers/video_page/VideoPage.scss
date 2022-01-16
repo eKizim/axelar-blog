@@ -36,6 +36,7 @@
 	align-content: start;
 	border-radius: 5px;
 	box-shadow: 0 0 3px 1px gray;
+	overflow-x: hidden;
 	overflow-y: scroll;
 	scrollbar-width: thin;
     }
@@ -51,6 +52,7 @@
 
     &__label {
         height: 75px;
+	width: 100%;
         margin: 3px 0;
         padding: 0 15px;
         display: flex;

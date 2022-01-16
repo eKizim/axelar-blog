@@ -13,13 +13,14 @@
 	.video_elem {
 	    width: 50%;
 	    height: 28vw;
+	    max-height: 400px;
 	    background-color: var(--main-dark-color);
 	    overflow: hidden;
 	}
     }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
     #video_section {
 	.video_section__container {
 	    flex-direction: column;

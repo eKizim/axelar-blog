@@ -1,7 +1,12 @@
 .press_unit {
-    width: 300px;
-    height: 110px;
+    max-width: 350px;
+    min-width: 250px;
     padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
     box-shadow: 0px 0px 3px 1px gray;
     border-radius: 5px;
     text-decoration: none;
@@ -16,7 +21,8 @@
 	justify-content: space-between;
 
 	&-img {
-	    max-width: 50px;
+	    width: auto;
+	    max-height: 50px;
 	}
 
 	&-date {
@@ -26,12 +32,8 @@
     }
 
     &__title {
-	height: 40px;
-	display: block;
 	font-size: 1rem;
 	font-family: var(--content-font);
-	overflow: hidden;
-
     }
 
     &:hover {

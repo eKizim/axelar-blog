@@ -1,12 +1,12 @@
 import React from 'react';
-import FooterLogo from '../../images/Footer_Logo.png';
-import Discord from '../../images/Discord.png';
-import Telegram from '../../images/Telegram.png';
-import Twitter from '../../images/Twitter.png';
-import LinkedIn from '../../images/LinkedIn.png';
-import YouTube from '../../images/Youtube.png';
-import Forum from '../../images/Forum.png';
-import AxelarGear from '../../images/Axelar-Gear.png';
+import FooterLogo from '../../images/footer_logo.svg';
+import Discord from '../../images/discord.svg';
+import Telegram from '../../images/telegram.svg';
+import Twitter from '../../images/twitter.svg';
+import LinkedIn from '../../images/linkedin.svg';
+import YouTube from '../../images/youtube.svg';
+import Forum from '../../images/forum.svg';
+import AxelarGear from '../../images/axelar_gear.svg';
 import './Footer.scss';
 
 export default function Footer() {

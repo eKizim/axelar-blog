@@ -2,18 +2,19 @@
     max-width: 370px;
     width: 370px;
     height: 370px;
+
     position: relative;
     display: flex;
     flex-direction: column;
     font-decoration: none;
     color: var(--main-text-color);
     box-shadow: 0px 0px 3px 1px gray;
+    text-decoration: none;
     overflow: hidden;
 
     &__img {
         width: 100%;
         max-height: 215px;
-        margin-bottom: 10px;
         display: block;
         overflow: hidden;
         transition: .1s;
@@ -37,7 +38,7 @@
 	    max-height: 50px;
             margin-bottom: 5px;
             font-family: var(--main-font);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             overflow: hidden;
         }
         a:hover {

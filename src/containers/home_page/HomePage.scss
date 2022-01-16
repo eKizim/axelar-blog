@@ -19,7 +19,8 @@
 			 "news blog blog"
 			 "video video video"
                          "press press press";
-    gap: 30px;
+    row-gap: 30px;
+    column-gap: 15px;
     align-items: start;
 
     #news_section {

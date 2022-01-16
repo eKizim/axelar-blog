@@ -21,9 +21,19 @@
     scrollbar-width: thin;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     padding-top: 50px;
 }
+
+#root {
+    height: 100%;
+}
+
 
 h1 {
     font-family: var(--head-font);

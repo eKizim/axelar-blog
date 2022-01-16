@@ -8,15 +8,9 @@ import NewsPage from './containers/news_page/NewsPage.jsx';
 import PressPage from './containers/press_page/PressPage.jsx';
 import './style.scss';
 
+import LastBlogPost from './components/last_blog_post/LastBlogPost.jsx';
 
 export default function App() {
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        console.log(navigate);
-    });
-    
-
     return (
         <Layout>
             <Routes>
