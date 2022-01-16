@@ -1,18 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-    mode: 'development',
-    
     entry: './src/index.jsx',
     output: {
 	filename: 'bundle.js',
 	path: path.resolve(__dirname, 'dist'),
 	clean: true,
-    },
+    }, 
 
     module: {
 	rules: [
@@ -32,20 +29,6 @@ module.exports = {
 	]
     },
 
-    devtool: 'inline-source-map',
-
-    optimization: {
-	minimizer: [new CssMinimizerPlugin()],
-	minimize: true
-    },
-
-    devServer: {
-	port: 3000,
-	historyApiFallback: true,
-	static: './dist',
-	hot: true
-    },
-
     plugins: [
 	new HtmlWebpackPlugin({
 	    template: './public/index.html',
@@ -55,5 +38,3 @@ module.exports = {
 	new MiniCssExtractPlugin()
     ]
 };
-
-
