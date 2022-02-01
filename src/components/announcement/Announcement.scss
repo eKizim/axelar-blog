@@ -6,76 +6,76 @@
     background-color: var(--main-dark-color);
 
     .announcement_close {
-	width: 25px;
-	height: 25px;
-	position: absolute;
-	top: 5px;
-	right: 5px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: var(--main-light-color);
-	font-family: var(--head-font);
-	font-size: 1.5rem;
-	border: none;
-	background-color: transparent;
-	opacity: 0;
-	visibility: hidden;
-	cursor: pointer;
-	transition: .1s;
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--main-light-color);
+        font-family: var(--head-font);
+        font-size: 1.5rem;
+        border: none;
+        background-color: transparent;
+        opacity: 0;
+        visibility: hidden;
+        cursor: pointer;
+        transition: .1s;
 
-	b {
-	    pointer-events: none;
-	}
+        b {
+            pointer-events: none;
+        }
     }
 
     &:hover .announcement_close {
-	opacity: 1;
-	visibility: visible;
+        opacity: 1;
+        visibility: visible;
     }
 
     .announcement_block {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	color: var(--main-light-color);
-
-	&__title {
-	    width: 90%;
-	    margin-bottom: 10px;
-	    font-family: var(--main-font);
-	    font-size: 1.5rem;
-	    font-weight: 400;
-	    overflow: hidden;
-	}
-
-	&__description, 
-	&__link {
-	    width: 90%;
-	    font-family: var(--content-font);
-	    font-size: 1.2rem;
-	}
-
-	&__description {
-	    margin-bottom: 5px;
-	}
-
-	&__link {
-	    color: var(--main-light-color);
-	}
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--main-light-color);
+    
+        &__title {
+            width: 90%;
+            margin-bottom: 10px;
+            font-family: var(--main-font);
+            font-size: 1.5rem;
+            font-weight: 400;
+            overflow: hidden;
+        }
+    
+        &__description, 
+        &__link {
+            width: 90%;
+            font-family: var(--content-font);
+            font-size: 1.2rem;
+        }
+    
+        &__description {
+            margin-bottom: 5px;
+        }
+    
+        &__link {
+            color: var(--main-light-color);
+        }
     }
 }
 
 @media screen and (max-width: 768px) {
     #announcement {
-	.announcement_close {
-	    visibility: visible;
-	    opacity: 1;
-	}
-
-	.announcement_block__description {
-	    display: none;
-	}
+        .announcement_close {
+            visibility: visible;
+            opacity: 1;
+        }
+    
+        .announcement_block__description {
+            display: none;
+        }
     }
 }

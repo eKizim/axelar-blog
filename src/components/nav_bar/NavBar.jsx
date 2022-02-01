@@ -14,9 +14,9 @@ export default function NavBar() {
     const activeLink = { backgroundColor: 'var(--main-dark-color)', color: 'var(--main-light-color)'};
 
     return (
-	<nav id="nav_bar">
-            { screenWidth > 768 ? <DesktopNavBar activeLink={activeLink}/> : <MobileNavBar activeLink={activeLink}/>}
-	</nav>
+    <nav id="nav_bar">
+        { screenWidth > 768 ? <DesktopNavBar activeLink={activeLink}/> : <MobileNavBar activeLink={activeLink}/>}
+    </nav>
     );
 };
 
@@ -25,12 +25,12 @@ function DesktopNavBar({activeLink}) {
     return (
         <React.Fragment>
             <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/blog">Blog</NavLink>
-	    <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/video">Video</NavLink>
-	    <NavLink className="nav_bar__logo" to="/">
-	        <img src={NavLogo} alt=""/>
-	    </NavLink>
-	    <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/news">News</NavLink>
-	    <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/press">Press</NavLink>
+            <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/video">Video</NavLink>
+            <NavLink className="nav_bar__logo" to="/">
+                <img src={NavLogo} alt=""/>
+            </NavLink>
+            <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/news">News</NavLink>
+            <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/press">Press</NavLink>
         </React.Fragment>
     );
 }
@@ -55,9 +55,9 @@ function MobileNavBar({activeLink}) {
             <div className="nav_bar__container" onClick={toggleMenu}>
                 <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/">Home</NavLink>
                 <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/blog">Blog</NavLink>
-	        <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/video">Video</NavLink>
+                <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/video">Video</NavLink>
                 <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/news">News</NavLink>
-	        <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/press">Press</NavLink>
+                <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/press">Press</NavLink>
             </div>
             <button className="burger_button" onClick={toggleMenu}><span></span></button>
         </React.Fragment>

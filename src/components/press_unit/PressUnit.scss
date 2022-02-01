@@ -15,28 +15,28 @@
     overflow: hidden;
 
     &__head {
-	height: 50px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-	&-img {
-	    width: auto;
-	    max-height: 50px;
-	}
+        &-img {
+            width: auto;
+            max-height: 50px;
+        }
 
-	&-date {
-	    font-family: var(--main-font);
-	    font-size: .9rem;
-	}
+        &-date {
+            font-family: var(--main-font);
+            font-size: .9rem;
+        }
     }
 
     &__title {
-	font-size: 1rem;
-	font-family: var(--content-font);
+        font-size: 1rem;
+        font-family: var(--content-font);
     }
 
     &:hover {
-	box-shadow: 0 0 3px 1px var(--main-dark-color);
+        box-shadow: 0 0 3px 1px var(--main-dark-color);
     }
 }

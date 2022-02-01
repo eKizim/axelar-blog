@@ -11,11 +11,11 @@
     overflow: hidden;
 
     &__img {
-	width: 50%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	overflow: hidden;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
 
         img {
             width: 100%;
@@ -24,8 +24,8 @@
 
     &__info {
         width: 50%;
-	height: 90%;
-	position: relative;
+        height: 90%;
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -50,7 +50,7 @@
         &-intro {
             font-family: var(--content-font);
             font-size: 1rem;
-	    text-align: justify;
+            text-align: justify;
             overflow: hidden;
         }
     }
@@ -59,19 +59,19 @@
 
 @media screen and (max-width: 576px) {
     .last_blog_post {
-	width: 90%;
-	height: 100%;
-	padding: 0;
-	max-height: none;
-	flex-direction: column;
-
-	&__img {
-	    width: 100%;
-	} 
-
-	&__info {
-	    width: 100%;
-	    padding: 10px;
-	}
+        width: 90%;
+        height: 100%;
+        padding: 0;
+        max-height: none;
+        flex-direction: column;
+    
+        &__img {
+            width: 100%;
+        } 
+    
+        &__info {
+            width: 100%;
+            padding: 10px;
+        }
     }
 }
