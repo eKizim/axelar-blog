@@ -24,13 +24,37 @@ export default function NavBar() {
 function DesktopNavBar({activeLink}) {
     return (
         <React.Fragment>
-            <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/blog">Blog</NavLink>
-            <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/video">Video</NavLink>
+            <NavLink
+                style={({isActive}) => isActive ? activeLink : {}}
+                className="nav_bar__item" to="/blog"
+            >
+                Blog
+            </NavLink>
+            
+            <NavLink
+                style={({isActive}) => isActive ? activeLink : {}}
+                className="nav_bar__item" to="/video"
+            >
+                Video
+            </NavLink>
+           
             <NavLink className="nav_bar__logo" to="/">
                 <img src={NavLogo} alt=""/>
             </NavLink>
-            <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/news">News</NavLink>
-            <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/press">Press</NavLink>
+            
+            <NavLink
+                style={({isActive}) => isActive ? activeLink : {}}
+                className="nav_bar__item" to="/news"
+            >
+                News
+            </NavLink>
+            
+            <NavLink
+                style={({isActive}) => isActive ? activeLink : {}}
+                className="nav_bar__item" to="/press"
+            >
+                Press
+            </NavLink>
         </React.Fragment>
     );
 }

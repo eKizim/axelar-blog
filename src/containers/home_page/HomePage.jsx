@@ -17,11 +17,11 @@ export default function HomePage() {
 
 function HomePageGrid() {
     return (
-	<div id="home_page__grid">
-  	    <NewsSection/>
-	    <BlogSection/>
-	    <VideoSection/>
+        <div id="home_page__grid">
+            <NewsSection/>
+            <BlogSection/>
+            <VideoSection/>
             <PressSection/>
-	</div>
+        </div>
     );
 };

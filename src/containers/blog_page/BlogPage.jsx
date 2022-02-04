@@ -8,21 +8,29 @@ import { articleBase } from '../../test_storage/article_examples.jsx';
 
 export default function BlogPage() {
     const lastArticle = articleBase[0];
-    const renderArticles = articleBase.slice(1).map(el => el = <BlogPost key={el.post_id} post_id={el.post_id} titleImg={el.title_img} title={el.title} date={el.date} titleParagraph={el.title_p}/>);
-    
+    const renderArticles = articleBase.slice(1).map(el => (
+        <BlogPost
+            key={el.post_id}
+            post_id={el.post_id}
+            titleImg={el.title_img}
+            title={el.title} date={el.date}
+            titleParagraph={el.title_p}
+        />)
+    );
+
     return (
         <section id="blog_page">
-          <h3 className="section_title">Axelar blog</h3>
-          <LastBlogPost 
-            post_id={lastArticle.post_id} 
-            title={lastArticle.title} 
-            date={lastArticle.date} 
-            titleImg={lastArticle.title_img} 
-            titleParagraph={lastArticle.title_p}/>
-          <div className="blog_page__grid">
-            {renderArticles}
-          </div>
-          <Outlet/>
+            <h3 className="section_title">Axelar blog</h3>
+            <LastBlogPost
+                post_id={lastArticle.post_id}
+                title={lastArticle.title}
+                date={lastArticle.date}
+                titleImg={lastArticle.title_img}
+                titleParagraph={lastArticle.title_p}/>
+            <div className="blog_page__grid">
+                {renderArticles}
+            </div>
+            <Outlet/>
         </section>
     );
 };
@@ -47,13 +55,13 @@ export function BlogPostReader() {
 
     return (
         <div id="reader_modal">
-          <button className="close_modal" onClick={() => navigate('/blog')}>X</button>
-          <article className="post_reader">
-            <h5 className="post_reader__title">{currentArticle.title}</h5>
-            <p className="post_reader__date">{currentArticle.date}</p>
-            <img className="post_reader__title-img" src={currentArticle.title_img} alt=""/>
-            <div className="post_reader__body" dangerouslySetInnerHTML={setBodyHTML()}></div>
-          </article>
+            <button className="close_modal" onClick={() => navigate('/blog')}>X</button>
+            <article className="post_reader">
+                <h5 className="post_reader__title">{currentArticle.title}</h5>
+                <p className="post_reader__date">{currentArticle.date}</p>
+                <img className="post_reader__title-img" src={currentArticle.title_img} alt=""/>
+                <div className="post_reader__body" dangerouslySetInnerHTML={setBodyHTML()}></div>
+            </article>
         </div>
     );
 };

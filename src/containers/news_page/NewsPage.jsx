@@ -45,7 +45,16 @@ function NewsViewer({setCurId}) {
 
 
 function NewsList({curId}) {
-    const renderNews = newsBase.map(el => el = <NewsItem active={curId === el.news_item_id} key={el.news_item_id} news_item_id={el.news_item_id} title={el.title} date={el.date} titleImg={el.title_img}/>);
+    const renderNews = newsBase.map(el => (
+        <NewsItem
+            active={curId === el.news_item_id}
+            key={el.news_item_id}
+            news_item_id={el.news_item_id}
+            title={el.title}
+            date={el.date}
+            titleImg={el.title_img}
+        />)
+    );
     
     return (
         <div className="news_list">

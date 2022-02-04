@@ -8,17 +8,25 @@ import { newsBase } from '../../../test_storage/news_examples.jsx';
 
 export default function NewsSection() {
     const lastNews = newsBase.length === 3 ? newsBase : newsBase.slice(0, 3);
-    const renderNews = lastNews.map(el => el = <NewsItem key={el.news_item_id} fromHome news_item_id={el.news_item_id} title={el.title} date={el.date} titleImg={el.title_img}/>);
+    const renderNews = lastNews.map(el => (
+        <NewsItem
+            key={el.news_item_id}
+            fromHome
+            news_item_id={el.news_item_id}
+            title={el.title}
+            date={el.date}
+            titleImg={el.title_img}
+        />)
+    );
 
     return (
-	<section id="news_section">
-	    <SectionTitle title="News" buttonText="Read all news" link="/news"/>
-	    <div className="news_section__list">
-              <div className="news_section__container">
-	        {renderNews}
-              </div>
-	    </div>
-	</section>
+        <section id="news_section">
+          <SectionTitle title="News" buttonText="Read all news" link="/news"/>
+          <div className="news_section__list">
+            <div className="news_section__container">
+              {renderNews}
+            </div>
+          </div>
+        </section>
     );
 };
-
