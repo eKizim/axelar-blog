@@ -13,7 +13,6 @@ export default function NewsItem({fromHome, active, news_item_id, title, date, t
             className={active ? "news_item active" : "news_item"}
             to={fromHome ? 'news/' + itemLink : itemLink}
             data-news-item-id={news_item_id}
-            onClick={() => window.scrollTo(0, 0)}
         >
             <img className="news_item__img" src={titleImg} alt=""/>
             <div className="news_item__container">

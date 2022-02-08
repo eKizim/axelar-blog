@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
+import SectionWrapper from '../../components/section_wrapper/SectionWrapper.jsx';
 import PlayIcon from '../../images/play.svg';
 import ActivePlayIcon from '../../images/play_active.svg';
 import './VideoPage.scss';
@@ -11,7 +12,7 @@ export default function VideoPage() {
     const [vidId, setVidId] = useState(videoBase[0].video_id);
 
     return (
-        <section id="video_page">
+        <SectionWrapper sectionId="video_page">
             <h3 className="section_title">Axelar video</h3>
             <div className="video_container">
                 <div className="video_container__viewer">
@@ -19,7 +20,7 @@ export default function VideoPage() {
                 </div>
                 <VideoList setCurVid={setCurVid} vidId={vidId} setVidId={setVidId}/>
             </div>
-        </section>
+        </SectionWrapper>
     );
 };
 

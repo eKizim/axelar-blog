@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import SectionWrapper from '../../components/section_wrapper/SectionWrapper.jsx';
 import NewsItem from '../../components/news_item/NewsItem.jsx';
 import './NewsPage.scss';
 
@@ -7,15 +8,15 @@ import { newsBase } from '../../test_storage/news_examples.jsx';
 
 export default function NewsPage() {
     const [curId, setCurId] = useState();
-    
+
     return (
-        <section id="news_page">
+        <SectionWrapper sectionId="news_page">
             <h3 className="section_title">News</h3>
             <div className="news_container">
                 <NewsViewer setCurId={setCurId}/>
                 <NewsList curId={curId}/>
             </div>
-        </section>
+        </SectionWrapper>
     );
 };
 
@@ -53,9 +54,10 @@ function NewsList({curId}) {
             title={el.title}
             date={el.date}
             titleImg={el.title_img}
+            onClick={() => window.scrollTo(0, 0)}
         />)
     );
-    
+
     return (
         <div className="news_list">
             <div className="news_list__container">

@@ -1,13 +1,7 @@
 import React from 'react';
 import FooterLogo from '../../images/footer_logo.svg';
-import Discord from '../../images/discord.svg';
-import Telegram from '../../images/telegram.svg';
-import Twitter from '../../images/twitter.svg';
-import LinkedIn from '../../images/linkedin.svg';
-import YouTube from '../../images/youtube.svg';
-import Forum from '../../images/forum.svg';
-import AxelarGear from '../../images/axelar_gear.svg';
-import './Footer.scss';
+import AxelarGear from "../../images/axelar_gear.svg";
+import "./Footer.scss";
 
 export default function Footer() {
     return (
@@ -31,26 +25,47 @@ function FooterContainer() {
 };
 
 function CommunityContainer() {
+    const tempCommunityData = [
+        {
+            app: 'Discord',
+            link: '#',
+            icon: require("../../images/discord.svg")
+        },
+        {
+            app: 'Telegram',
+            link: '#',
+            icon: require("../../images/telegram.svg")
+        },
+        {
+            app: 'Twitter',
+            link: '#',
+            icon: require("../../images/twitter.svg")
+        },
+        {
+            app: 'LinkedIn',
+            link: '#',
+            icon: require("../../images/linkedin.svg")
+        },
+        {
+            app: 'Youtube',
+            link: '#',
+            icon: require("../../images/youtube.svg")
+        },
+        {
+            app: 'Forum',
+            link: '#',
+            icon: require("../../images/forum.svg")
+        },
+    ];
+
+    const renderedItems = tempCommunityData.map(el => (
+        <a key={el.app + "-key"}className="community_container__item" href={el.link}>
+            <img src={el.icon} alt=""/>
+        </a>
+    ));
     return (
         <div className="community_container">
-            <a className="community_container__item" href="#">
-                <img src={Discord} alt=""/>
-            </a>
-            <a className="community_container__item" href="#">
-                <img src={Telegram} alt=""/>
-            </a>
-            <a className="community_container__item" href="#">
-                <img src={Twitter} alt=""/>
-            </a>
-            <a className="community_container__item" href="#">
-                <img src={LinkedIn} alt=""/>
-            </a>
-            <a className="community_container__item" href="#">
-                <img src={YouTube} alt=""/>
-            </a>
-            <a className="community_container__item" href="#">
-                <img src={Forum} alt=""/>
-            </a>
+            {renderedItems}
         </div>
     );
 }

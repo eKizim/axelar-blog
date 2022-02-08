@@ -26,13 +26,13 @@
         padding: 10px;
         position: absolute;
         bottom: 0;
-        
+
         display: flex;
         flex-direction: column;
 
         overflow: hidden;
         transition: .2s;
-        
+
         &-title {
             min-height: 20px;
             max-height: 50px;
@@ -74,7 +74,4 @@
             color: var(--main-light-color);
         }
     }
-} 
-
-
-
+}

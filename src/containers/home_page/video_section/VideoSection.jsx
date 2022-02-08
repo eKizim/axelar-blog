@@ -7,7 +7,7 @@ import { videoBase } from '../../../test_storage/video_base.jsx';
 
 export default function VideoSection() {
     const renderVideo = videoBase.slice(0, 2).map(el => (
-        <div className="video_elem">
+        <div className="video_elem" key={el.link}>
             <ReactPlayer
                 url={el.link}
                 width="100%"

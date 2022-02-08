@@ -6,34 +6,40 @@ import './NavBar.scss';
 
 export default function NavBar() {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => setLoaded(true), []);
 
     useEffect(() => {
         window.addEventListener('resize', () => setScreenWidth(window.innerWidth));
     });
 
-    const activeLink = { backgroundColor: 'var(--main-dark-color)', color: 'var(--main-light-color)'};
-
+    const scrollToTop = (e) => {
+        if(e.target.className === "nav_bar__item") {
+            return window.scrollTo(0, 0);
+        }
+    }
     return (
-    <nav id="nav_bar">
-        { screenWidth > 768 ? <DesktopNavBar activeLink={activeLink}/> : <MobileNavBar activeLink={activeLink}/>}
-    </nav>
+        <nav id="nav_bar" className={loaded ? "loaded" : ""} onClick={scrollToTop}>
+            { screenWidth > 768 ? <DesktopNavBar/> : <MobileNavBar/> }
+        </nav>
     );
 };
 
 
-function DesktopNavBar({activeLink}) {
+function DesktopNavBar() {
     return (
         <React.Fragment>
             <NavLink
-                style={({isActive}) => isActive ? activeLink : {}}
-                className="nav_bar__item" to="/blog"
+                className={ ({isActive}) => isActive ? "nav_bar__item active" : "nav_bar__item" }
+                to="/blog"
             >
                 Blog
             </NavLink>
             
             <NavLink
-                style={({isActive}) => isActive ? activeLink : {}}
-                className="nav_bar__item" to="/video"
+                className={ ({isActive}) => isActive ? "nav_bar__item active" : "nav_bar__item" }
+                to="/video"
             >
                 Video
             </NavLink>
@@ -43,15 +49,15 @@ function DesktopNavBar({activeLink}) {
             </NavLink>
             
             <NavLink
-                style={({isActive}) => isActive ? activeLink : {}}
-                className="nav_bar__item" to="/news"
+                className={ ({isActive}) => isActive ? "nav_bar__item active" : "nav_bar__item" }
+                to="/news"
             >
                 News
             </NavLink>
             
             <NavLink
-                style={({isActive}) => isActive ? activeLink : {}}
-                className="nav_bar__item" to="/press"
+                className={ ({isActive}) => isActive ? "nav_bar__item active" : "nav_bar__item" }
+                to="/press"
             >
                 Press
             </NavLink>
@@ -77,13 +83,41 @@ function MobileNavBar({activeLink}) {
                 <img src={MobileNavLogo} alt=""/>
             </NavLink>
             <div className="nav_bar__container" onClick={toggleMenu}>
-                <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/">Home</NavLink>
-                <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/blog">Blog</NavLink>
-                <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/video">Video</NavLink>
-                <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/news">News</NavLink>
-                <NavLink style={({isActive}) => isActive ? activeLink : {}} className="nav_bar__item" to="/press">Press</NavLink>
+                <NavLink
+                     className={ ({isActive}) => isActive ? "nav_bar__item active" : "nav_bar__item" }
+                     to="/"
+                >
+                    Home
+                </NavLink>
+                <NavLink
+                    className={ ({isActive}) => isActive ? "nav_bar__item active" : "nav_bar__item" }
+                    to="/blog"
+                >
+                    Blog
+                </NavLink>
+                <NavLink
+                    className={ ({isActive}) => isActive ? "nav_bar__item active" : "nav_bar__item" }
+                    to="/video"
+                >
+                    Video
+                </NavLink>
+                <NavLink
+                    className={ ({isActive}) => isActive ? "nav_bar__item active" : "nav_bar__item" }
+                    to="/news"
+                >
+                    News
+                </NavLink>
+                <NavLink
+                    className={ ({isActive}) => isActive ? "nav_bar__item active" : "nav_bar__item" }
+                    to="/press"
+                >
+                    Press
+                </NavLink>
             </div>
-            <button className="burger_button" onClick={toggleMenu}><span></span></button>
+            <button className="burger_button" onClick={toggleMenu}>
+                <span></span>
+            </button>
         </React.Fragment>
     );
 };
+

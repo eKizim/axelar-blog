@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionWrapper from '../../components/section_wrapper/SectionWrapper.jsx';
 import PressUnit from '../../components/press_unit/PressUnit.jsx';
 import './PressPage.scss';
 
@@ -16,11 +17,11 @@ export default function PressPage() {
     );
 
     return (
-        <section id="press_page">
+        <SectionWrapper secrionId="press_page">
             <h3 className="section_title">Press mentions</h3>
             <div className="press_page__container">
                 {renderPress}
             </div>
-        </section>
+        </SectionWrapper>
     );
 };

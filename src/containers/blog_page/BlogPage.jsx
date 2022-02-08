@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams, Outlet, useNavigate } from 'react-router-dom';
 import LastBlogPost from '../../components/last_blog_post/LastBlogPost.jsx';
+import SectionWrapper from '../../components/section_wrapper/SectionWrapper.jsx';
 import BlogPost from '../../components/blog_post/BlogPost.jsx';
 import './BlogPage.scss';
 
@@ -19,7 +20,7 @@ export default function BlogPage() {
     );
 
     return (
-        <section id="blog_page">
+        <SectionWrapper sectionId="blog_page">
             <h3 className="section_title">Axelar blog</h3>
             <LastBlogPost
                 post_id={lastArticle.post_id}
@@ -31,7 +32,7 @@ export default function BlogPage() {
                 {renderArticles}
             </div>
             <Outlet/>
-        </section>
+        </SectionWrapper>
     );
 };
 

@@ -5,7 +5,7 @@ import Announcement from '../components/announcement/Announcement.jsx';
 import Footer from '../components/footer/Footer.jsx';
 import SubForm from '../components/sub_form/SubForm.jsx';
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
     return (
         <React.Fragment>
             <NavBar/>

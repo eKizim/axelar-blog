@@ -1,0 +1,14 @@
+.section_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .5s;
+
+    &.loaded {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

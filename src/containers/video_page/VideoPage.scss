@@ -1,16 +1,3 @@
-#video_page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    scrollbar-width: thin;
-
-    .section_title {
-        align-self: start;
-        text-decoration: underline;
-    }
-}
-
 .video_container {
     height: 450px;
     padding: 0 10px;

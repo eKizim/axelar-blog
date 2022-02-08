@@ -11,8 +11,15 @@
 
     background-color: var(--main-light-color);
     box-shadow: 0 3px 3px var(--main-dark-color);
+    opacity: 0;
     z-index: 100;
+    transform: translateY(-50px);
+    transition: .3s;
 
+    &.loaded {
+        opacity: 1;
+        transform: translateY(0px);
+    }
     .nav_bar__item,
     .nav_bar__logo {
         width: 150px;
@@ -25,6 +32,11 @@
         font-family: var(--head-font);
         color: var(--main-text-color);
         font-size: 1.5rem;
+
+        &.active {
+            color: var(--main-light-color);
+            background-color: var(--main-dark-color);
+        }
     }
 
     .nav_bar__logo img {
