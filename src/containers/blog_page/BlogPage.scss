@@ -11,3 +11,46 @@
         gap: 20px;
     }
 }
+
+@media screen and (max-width: 991px) {
+    #blog_page {
+        .last_blog_post {
+            padding: 10px;
+        }
+
+        .blog_page__grid {
+            margin-top: 30px;
+            justify-content: space-evenly;
+            column-gap: 5px;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #blog_page {
+        .blog_post {
+            width: 90%;
+            height: auto;
+
+            &__info {
+                position: relative;
+                height: auto;
+
+                &-content {
+                    display: none;
+                }
+            }
+
+            &:hover {
+                .blog_post__img {
+                    filter: none;
+                }
+
+                .blog_post__info {
+                    color: var(--main-text-color);
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
