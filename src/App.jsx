@@ -1,14 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, Suspense} from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Layout from './containers/Layout.jsx';
 import HomePage from './containers/home_page/HomePage.jsx';
-import BlogPage, { BlogPostReader } from './containers/blog_page/BlogPage.jsx';
+import BlogPage from './containers/blog_page/BlogPage.jsx';
+import BlogPostReader from './components/blog_post_reader/BlogPostReader.jsx'; // BUG
 import VideoPage from './containers/video_page/VideoPage.jsx';
 import NewsPage from './containers/news_page/NewsPage.jsx';
 import PressPage from './containers/press_page/PressPage.jsx';
 import './style.scss';
-
-import LastBlogPost from './components/last_blog_post/LastBlogPost.jsx';
 
 export default function App() {
     return (

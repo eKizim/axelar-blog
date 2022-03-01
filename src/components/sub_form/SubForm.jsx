@@ -2,7 +2,7 @@ import React from 'react';
 import './SubForm.scss';
 
 export default function SubForm() {
-    
+
     const handleSubmit = (_e) => {
         _e.preventDefault();
         const thanks = document.querySelector(".sub_form__thanks");
