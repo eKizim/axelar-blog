@@ -6,7 +6,7 @@ module.exports = merge(common, {
     mode: 'production',
     devtool: 'source-map',
     optimization: {
-	minimizer: [new TerserPlugin()],
-	minimize: true
+        minimizer: [new TerserPlugin()],
+        minimize: true
     }
 });
