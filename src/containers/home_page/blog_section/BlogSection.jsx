@@ -1,11 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import LastBlogPost from '../../../components/last_blog_post/LastBlogPost.jsx';
 import BlogPost from '../../../components/blog_post/BlogPost.jsx';
-import BlogPostImg from '../../../images/blog_post_img.png';
 import SectionTitle from '../../../components/section_title/SectionTitle.jsx';
 import './BlogSection.scss';
 
-import { articleBase } from '../../../test_storage/article_examples.jsx';
+import { articleBase } from '../../../test_storage/article_examples.js';
 
 export default function BlogSection() {
     const lastArticle = articleBase[0];
@@ -20,13 +19,13 @@ export default function BlogSection() {
             date={el.date}
             title={el.title}
             titleParagraph={el.title_p}
-        />)
-    );
+        />
+    ));
 
     return (
-        <section id="blog_section">
-            <SectionTitle title="Blog" buttonText="Read all posts" link="/blog"/>
-            <div className="blog_section__container">
+        <section id='blog_section'>
+            <SectionTitle title='Blog' buttonText='Read all posts' link='/blog'/>
+            <div className='blog_section__container'>
                 <LastBlogPost
                     fromHome
                     clipped
@@ -36,10 +35,10 @@ export default function BlogSection() {
                     titleImg={lastArticle.title_img}
                     titleParagraph={lastArticle.title_p}
                 />
-                <div className="recent_posts">
+                <div className='recent_posts'>
                     {renderRecentPosts}
                 </div>
             </div>
         </section>
     );
-};
+}

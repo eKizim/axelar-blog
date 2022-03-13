@@ -5,25 +5,24 @@ import PlayIcon from '../../images/play.svg';
 import ActivePlayIcon from '../../images/play_active.svg';
 import './VideoPage.scss';
 
-import { videoBase } from '../../test_storage/video_base.jsx';
+import { videoBase } from '../../test_storage/video_base.js';
 
 export default function VideoPage() {
     const [curVid, setCurVid] = useState(videoBase[0].link);
     const [vidId, setVidId] = useState(videoBase[0].video_id);
 
     return (
-        <SectionWrapper sectionId="video_page">
-            <h3 className="section_title">Axelar video</h3>
-            <div className="video_container">
-                <div className="video_container__viewer">
-                    <ReactPlayer url={curVid} width="100%" height="100%"/>
+        <SectionWrapper sectionId='video_page'>
+            <h3 className='section_title'>Axelar video</h3>
+            <div className='video_container'>
+                <div className='video_container__viewer'>
+                    <ReactPlayer url={curVid} width='100%' height='100%'/>
                 </div>
                 <VideoList setCurVid={setCurVid} vidId={vidId} setVidId={setVidId}/>
             </div>
         </SectionWrapper>
     );
-};
-
+}
 
 function VideoList({setCurVid, vidId, setVidId}) {
     const renderVids = videoBase.map(el => (
@@ -37,29 +36,28 @@ function VideoList({setCurVid, vidId, setVidId}) {
             vidId={vidId}
             setVidId={setVidId}
             setCurVid={setCurVid}
-        />)
-    );
+        />
+    ));
 
     return (
-        <div className="video_container__list">
+        <div className='video_container__list'>
             {renderVids}
         </div>
     );
-};
+}
 
-
-function VideoItem({video_id, link, title, pub_date, vidId, setVidId, setCurVid}) {
+function VideoItem({video_id, link, title, vidId, setVidId, setCurVid}) {
     const [icon, setIcon] = useState();
 
     useEffect(() => vidId === video_id ? setIcon(ActivePlayIcon) : setIcon(PlayIcon), [vidId]);
 
     return (
-        <div className="video_item" onChange={() => {setCurVid(link); setVidId(video_id);}}>
-            <input type="radio" name="video" id={video_id} value={video_id} defaultChecked={video_id === "v0001"}/>
-            <label className="video_item__label" htmlFor={video_id}>
-                <img className="video_item__img" src={icon} alt=""/>
-                <p className="video_item__title">{title}</p>
+        <div className='video_item' onChange={() => {setCurVid(link); setVidId(video_id);}}>
+            <input type='radio' name='video' id={video_id} value={video_id} defaultChecked={video_id === 'v0001'}/>
+            <label className='video_item__label' htmlFor={video_id}>
+                <img className='video_item__img' src={icon} alt=''/>
+                <p className='video_item__title'>{title}</p>
             </label>
         </div>
     );
-};
+}

@@ -8,21 +8,21 @@ import './HomePage.scss';
 
 export default function HomePage() {
     return (
-        <SectionWrapper setcionId="home_page">
-            <h3 className="section_title">Last Updates</h3>
-            <HomePageGrid/>
+        <SectionWrapper setcionId='home_page'>
+            <h3 className='section_title'>Last Updates</h3>
+            <HomePageGrid />
         </SectionWrapper>
     );
-};
+}
 
 
 function HomePageGrid() {
     return (
-        <div id="home_page__grid">
-            <NewsSection/>
-            <BlogSection/>
-            <VideoSection/>
-            <PressSection/>
+        <div id='home_page__grid'>
+            <NewsSection />
+            <BlogSection />
+            <VideoSection />
+            <PressSection />
         </div>
     );
-};
+}

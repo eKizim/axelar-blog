@@ -4,24 +4,24 @@ import SectionWrapper from '../../components/section_wrapper/SectionWrapper.jsx'
 import NewsItem from '../../components/news_item/NewsItem.jsx';
 import './NewsPage.scss';
 
-import { newsBase } from '../../test_storage/news_examples.jsx';
+import { newsBase } from '../../test_storage/news_examples.js';
 
 export default function NewsPage() {
     const [curId, setCurId] = useState();
 
     return (
-        <SectionWrapper sectionId="news_page">
-            <h3 className="section_title">News</h3>
-            <div className="news_container">
-                <NewsViewer setCurId={setCurId}/>
-                <NewsList curId={curId}/>
+        <SectionWrapper sectionId='news_page'>
+            <h3 className='section_title'>News</h3>
+            <div className='news_container'>
+                <NewsViewer setCurId={setCurId} />
+                <NewsList curId={curId} />
             </div>
         </SectionWrapper>
     );
-};
+}
 
 
-function NewsViewer({setCurId}) {
+function NewsViewer({ setCurId }) {
     const [viewerBody, setViewerBody] = useState();
     const params = useParams();
     const currentItem = params.invoiceId ? newsBase.find(el => el.news_item_id === params.invoiceId.split('_')[0]) : newsBase[0];
@@ -36,13 +36,13 @@ function NewsViewer({setCurId}) {
     };
 
     return (
-        <article className="news_viewer" data-current-item={currentItem.news_item_id}>
-            <p className="news_viewer__date">{currentItem.date}</p>
-            <h5 className="news_viewer__title">{currentItem.title}</h5>
-            <div className="news_viewer__body" dangerouslySetInnerHTML={setBodyHTML()}></div>
+        <article className='news_viewer' data-current-item={currentItem.news_item_id}>
+            <p className='news_viewer__date'>{currentItem.date}</p>
+            <h5 className='news_viewer__title'>{currentItem.title}</h5>
+            <div className='news_viewer__body' dangerouslySetInnerHTML={setBodyHTML()}></div>
         </article>
     );
-};
+}
 
 
 function NewsList({curId}) {
@@ -55,14 +55,14 @@ function NewsList({curId}) {
             date={el.date}
             titleImg={el.title_img}
             onClick={() => window.scrollTo(0, 0)}
-        />)
-    );
+        />
+    ));
 
     return (
-        <div className="news_list">
-            <div className="news_list__container">
+        <div className='news_list'>
+            <div className='news_list__container'>
                 {renderNews}
             </div>
         </div>
     );
-};
+}

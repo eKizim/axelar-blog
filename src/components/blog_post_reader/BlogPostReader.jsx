@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { articleBase } from '../../test_storage/article_examples.jsx';
+import { articleBase } from '../../test_storage/article_examples';
 import './BlogPostReader.scss';
 
 export default function BlogPostReader() {
@@ -8,7 +8,7 @@ export default function BlogPostReader() {
     const [readerBody, setReaderBody] = useState();
     const navigate = useNavigate();
 
-    const currentArticle = articleBase.find(el => el.post_id === params.invoiceId.split('_')[0]);
+    const currentArticle = articleBase.find((el) => el.post_id === params.invoiceId.split('_')[0]);
 
     useEffect(() => {
         setReaderBody(currentArticle.body);
@@ -18,18 +18,18 @@ export default function BlogPostReader() {
     });
 
     const setBodyHTML = () => {
-        return {__html: readerBody};
+        return { __html: readerBody };
     };
 
     return (
-        <div id="reader_modal">
-            <button className="close_modal" onClick={() => navigate('/blog')}>X</button>
-            <article className="post_reader">
-                <h5 className="post_reader__title">{currentArticle.title}</h5>
-                <p className="post_reader__date">{currentArticle.date}</p>
-                <img className="post_reader__title-img" src={currentArticle.title_img} alt=""/>
-                <div className="post_reader__body" dangerouslySetInnerHTML={setBodyHTML()}></div>
+        <div id='reader_modal'>
+            <button className='close_modal' onClick={() => navigate('/blog')}>X</button>
+            <article className='post_reader'>
+                <h5 className='post_reader__title'>{ currentArticle.title }</h5>
+                <p className='post_reader__date'>{ currentArticle.date }</p>
+                <img className='post_reader__title-img' src={currentArticle.title_img} alt='' />
+                <div className='post_reader__body' dangerouslySetInnerHTML={setBodyHTML()} />
             </article>
         </div>
     );
-};
+}

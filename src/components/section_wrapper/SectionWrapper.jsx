@@ -7,9 +7,8 @@ export default function SectionWrapper({ sectionId, children }) {
     useEffect(() => setLoaded(true), []);
 
     return (
-        <section id={sectionId} className={`section_wrapper ${loaded && "loaded"}`}>
+        <section id={sectionId} className={`section_wrapper ${loaded && 'loaded'}`}>
             { children }
         </section>
     )
 }
-
