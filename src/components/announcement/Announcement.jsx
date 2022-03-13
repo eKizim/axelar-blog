@@ -8,7 +8,7 @@ export default function Announcement() {
 
     return (
         <div id='announcement'>
-            <button className='announcement_close' onClick={closeAnnouncement}><b>X</b></button>
+            <button className='announcement_close' onClick={closeAnnouncement}><span></span></button>
             <div className='announcement_block'>
                 <h2 className='announcement_block__title'>Announcing the Launch of Axelar&aposs incentivized Quantum Community Program!</h2>
                 <p className='announcement_block__description'>

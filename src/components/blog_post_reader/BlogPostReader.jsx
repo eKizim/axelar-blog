@@ -23,7 +23,7 @@ export default function BlogPostReader() {
 
     return (
         <div id='reader_modal'>
-            <button className='close_modal' onClick={() => navigate('/blog')}>X</button>
+            <button className='close_modal' onClick={() => navigate('/blog')}><span></span></button>
             <article className='post_reader'>
                 <h5 className='post_reader__title'>{ currentArticle.title }</h5>
                 <p className='post_reader__date'>{ currentArticle.date }</p>
