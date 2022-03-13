@@ -92,36 +92,36 @@
         background-color: var(--main-dark-color);
         pointer-events: none;
 
-    &:before {
-        content: "";
-        height: 3px;
-        display: block;
-        position: relative;
-        bottom: 10px;
-        background-color: var(--main-dark-color);
-        transition: .1s;
-    }
+        &:before {
+            content: "";
+            height: 3px;
+            display: block;
+            position: relative;
+            bottom: 10px;
+            background-color: var(--main-dark-color);
+            transition: .1s;
+        }
 
-    &:after {
-        content: "";
-        height: 3px;
-        display: block;
-        position: relative;
-        top: 7px;
-        background-color: var(--main-dark-color);
-        transition: .1s;
-    }
+        &:after {
+            content: "";
+            height: 3px;
+            display: block;
+            position: relative;
+            top: 7px;
+            background-color: var(--main-dark-color);
+            transition: .1s;
+        }
     }
 }
 
 .burger_button.active {
     span {
         background-color: transparent;
-        
+
         &:before {
             transform: translateY(10px) rotate(-45deg);
         }
-        
+
         &:after {
             transform: translateY(-10px) rotate(45deg);
         }
@@ -136,12 +136,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            
+
             img {
-            width: 90%;
+                width: 90%;
             }
         }
-    
+
         .nav_bar__item {
             width: 100%;
             height: 25%;

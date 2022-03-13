@@ -4,22 +4,22 @@
     margin-bottom: 50px;
 
     .press_section__container {
-	width: auto;
-	height: auto;
-	padding: 10px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 15px;
+        width: auto;
+        height: auto;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
 }
 
 @media screen and (max-width: 768px) {
     #press_section {
-	.press_section__container {
-	    .press_unit {
-		width: 100%;
-	    }
-	}
+        .press_section__container {
+            .press_unit {
+                width: 100%;
+            }
+        }
     }
 }

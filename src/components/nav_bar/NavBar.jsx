@@ -22,10 +22,11 @@ export default function NavBar() {
 
     return (
         <nav id='nav_bar' className={loaded ? 'loaded' : ''} onClick={scrollToTop}>
-            { screenWidth > 768 ? <DesktopNavBar /> : <MobileNavBar /> }
+            {screenWidth > 768 ? <DesktopNavBar /> : <MobileNavBar />}
         </nav>
     );
 }
+
 
 function DesktopNavBar() {
     return (
@@ -67,6 +68,13 @@ function DesktopNavBar() {
 
 
 function MobileNavBar() {
+    const navBarArr = [
+        { link:      '', section:  'Home'},
+        { link:  'blog', section:  'Blog'},
+        { link: 'video', section: 'Video'},
+        { link: 'news', section:   'News'},
+        { link: 'press', section: 'Press'}
+    ];
 
     const toggleMenu = (e) => {
         const target = e.target;
@@ -77,43 +85,26 @@ function MobileNavBar() {
         }
     };
 
+    const renderedNavLinks = navBarArr.map(item => (
+        <NavLink
+            className={({isActive}) => isActive ? 'nav_bar__item active' : 'nav_bar__item'}
+            key={item.link}
+            to={`/${item.link}`}
+        >
+            {item.section}
+        </NavLink>
+    ));
+
     return (
         <React.Fragment>
             <NavLink className='nav_bar__logo' to='/'>
                 <img src={MobileNavLogo} alt=''/>
             </NavLink>
+
             <div className='nav_bar__container' onClick={toggleMenu}>
-                <NavLink
-                    className={({isActive}) => isActive ? 'nav_bar__item active' : 'nav_bar__item'}
-                    to='/'
-                >
-                    Home
-                </NavLink>
-                <NavLink
-                    className={({isActive}) => isActive ? 'nav_bar__item active' : 'nav_bar__item'}
-                    to='/blog'
-                >
-                    Blog
-                </NavLink>
-                <NavLink
-                    className={({isActive}) => isActive ? 'nav_bar__item active' : 'nav_bar__item'}
-                    to='/video'
-                >
-                    Video
-                </NavLink>
-                <NavLink
-                    className={({isActive}) => isActive ? 'nav_bar__item active' : 'nav_bar__item'}
-                    to='/news'
-                >
-                    News
-                </NavLink>
-                <NavLink
-                    className={({isActive}) => isActive ? 'nav_bar__item active' : 'nav_bar__item'}
-                    to='/press'
-                >
-                    Press
-                </NavLink>
+                {renderedNavLinks}
             </div>
+
             <button className='burger_button' onClick={toggleMenu}>
                 <span></span>
             </button>

@@ -36,10 +36,10 @@
 
 @media screen and (max-width: 991px) {
     #home_page__grid {
-    grid-template-areas: "news news news"
-                         "blog blog blog"
-                         "blog blog blog"
-                         "video video video"
-                         "press press press";
+        grid-template-areas: "news news news"
+                             "blog blog blog"
+                             "blog blog blog"
+                             "video video video"
+                             "press press press";
     }
 }
