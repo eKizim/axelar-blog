@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './SectionWrapper.scss';
 
 export default function SectionWrapper({ sectionId, children }) {
-    const [loaded, setLoaded] = useState(false);
-
-    useEffect(() => setLoaded(true), []);
-
     return (
-        <section id={sectionId} className={`section_wrapper ${loaded && 'loaded'}`}>
+        <section id={sectionId} className={`section_wrapper`}>
             { children }
         </section>
     )
